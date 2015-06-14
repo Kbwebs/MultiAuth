@@ -76,15 +76,15 @@ class PasswordResetServiceProvider extends ServiceProvider
      */
     protected function registerCommands()
     {
-        $this->app->singleton('command.multiauth.resets', function($app) {
+        $this->app->singleton('command.multi-auth.resets', function($app) {
             return new PasswordResetsTableCommand($app['files']);
         });
 
-        $this->app->singleton('command.multiauth.resetsc.clear', function($app) {
+        $this->app->singleton('command.multi-auth.resets.clear', function($app) {
             return new ClearResetsTableCommand();
         });
 
-        $this->commands('command.multiauth.resets', 'command.multiauth.resetsc.clear');
+        $this->commands('command.multi-auth.resets', 'command.multi-auth.resets.clear');
     }
 
     /**
