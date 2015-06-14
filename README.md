@@ -72,6 +72,7 @@ Likewise, if you want to clear all password resets, you have to run the followin
 php artisan kbwebs:multi-auth:clear-resets
 ```
 
-
 **NOTE** It is very important that you replace the default service providers. 
 If you do not wish to use Password resets, then remove the original Password resets server provider as it will cause errors.
+
+## Usage
