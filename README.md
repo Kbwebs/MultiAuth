@@ -75,4 +75,19 @@ php artisan kbwebs:multi-auth:clear-resets
 **NOTE** It is very important that you replace the default service providers. 
 If you do not wish to use Password resets, then remove the original Password resets server provider as it will cause errors.
 
-## Usage
+## Usage For Authentication
+
+
+## Usage For Password Resets
+Example for a password reset email:
+```
+To reset your password, complete this form: {{ URL::to('password/reset', array($type, $token)) }}.
+```
+This generates a URL like the following:
+```
+http://example.com/password/reset/user/21eb8ee5fe666r3b8d0521156bbf53266bnca572
+```
+Which will match the following route:
+```
+Route::get('password/reset/{type}/{token}', 'Controller@method');
+```
