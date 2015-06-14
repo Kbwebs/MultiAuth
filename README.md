@@ -27,7 +27,7 @@ and replace it with this array:
 'multi-auth' => [
     'admin' => [
         'driver' => 'eloquent',
-        'model'  => App\admin::class
+        'model'  => App\Admin::class
     ],
     'user' => [
         'driver' => 'eloquent',
