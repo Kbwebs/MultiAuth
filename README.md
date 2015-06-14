@@ -47,7 +47,7 @@ Open up config/app.php file and replace the PasswordResetServiceProvider with:
 ```
 Illuminate\Auth\Passwords\PasswordResetServiceProvider::class -> Kbwebs\MultiAuth\PasswordResets\PasswordResetServiceProvider::class
 ```
-If you  want to use the password resets from this Package you will need to change this in each Model who use password resets:
+If you  want to use the password resets from this Package you will need to change this in each Model there use password resets:
 ```PHP
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
