@@ -75,13 +75,34 @@ php artisan kbwebs:multi-auth:clear-resets
 **NOTE** It is very important that you replace the default service providers. 
 If you do not wish to use Password resets, then remove the original Password resets server provider as it will cause errors.
 
-## Usage For Authentication
-
-
-## Usage For Password Resets
+## Usage
+#### Authentication:
+It works just like the original laravel authentication library, 
+the only change is the **user()** or **admin()** it will match the auth type, as your defining in the multi-auth array:
+```
+Auth::attempt(['email' => $email, 'password' => $password], $remember)
+```
+But now it has to be like, with the **user()** or **admin()**:
+```
+Auth::user()->attempt(['email' => $email, 'password' => $password], $remember)
+```
+#### Password resets:
+It works just like the original laravel authentication library, 
+the only change is the **user()** or **admin()** it will match the auth type, as your defining in the multi-auth array:
+```
+$response = Password::sendResetLink($request->only('email'), function (Message $message) {
+    $message->subject($this->getEmailSubject());
+});
+```
+But now it has to be like, with the **user()** or **admin()**:
+```
+$response = Password::user()->sendResetLink($request->only('email'), function (Message $message) {
+    $message->subject($this->getEmailSubject());
+});
+```
 Example for a password reset email:
 ```
-To reset your password, complete this form: {{ URL::to('password/reset', array($type, $token)) }}.
+Click here to reset your password: {{ URL::to('password/reset', array($type, $token)) }}.
 ```
 This generates a URL like the following:
 ```
