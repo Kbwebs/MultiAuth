@@ -27,11 +27,11 @@ and replace it with this array:
 'multi-auth' => [
     'admin' => [
         'driver' => 'eloquent',
-        'model'  => 'App\Admin'
+        'model'  => App\admin::class
     ],
     'user' => [
         'driver' => 'eloquent',
-        'model'  => 'App\User'
+        'model'  => App\User::class
     ]
 ]
 ```
