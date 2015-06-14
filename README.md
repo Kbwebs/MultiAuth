@@ -14,7 +14,7 @@ composer update
 ## Authentication
 Open up the config/app.php file and replace the AuthServiceProvider with:
 ```
-AuthServiceProvider -> Kbwebs\MultiAuth\AuthServiceProvider
+Illuminate\Auth\AuthServiceProvider::class -> Kbwebs\MultiAuth\AuthServiceProvider::class
 ```
 And open config/auth.php file and remove:
 ```PHP
@@ -45,7 +45,7 @@ If you want to use Database instead of Eloquent you can use it as:
 ## Password Resets
 Open up config/app.php file and replace the PasswordResetServiceProvider with:
 ```
-PasswordResetServiceProvider -> Kbwebs\MultiAuth\PasswordResets\PasswordResetServiceProvider 
+Illuminate\Auth\Passwords\PasswordResetServiceProvider::class -> Kbwebs\MultiAuth\PasswordResets\PasswordResetServiceProvider::class
 ```
 If you  want to use the password resets from this Package you will need to change this in each Model who use password resets:
 ```PHP
