@@ -65,7 +65,7 @@ class PasswordResetServiceProvider extends ServiceProvider
             // interface, and is responsible for the actual storing of auth tokens and
             // their e-mail addresses. We will inject this table and hash key to it.
             $table  = $app['config']['auth.password.table'];
-            $key 	= $app['config']['app.key'];
+            $key    = $app['config']['app.key'];
             $expire = $app['config']->get('auth.password.expire', 60);
             return new DbRepository($connection, $table, $key, $expire);
         });
