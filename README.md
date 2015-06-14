@@ -90,13 +90,13 @@ Auth::user()->attempt(['email' => $email, 'password' => $password], $remember)
 It works just like the original laravel authentication library, 
 the only change is the **user()** or **admin()** it will match the auth type, as your defining in the multi-auth array:
 ```
-$response = Password::sendResetLink($request->only('email'), function (Message $message) {
+Password::sendResetLink($request->only('email'), function (Message $message) {
     $message->subject($this->getEmailSubject());
 });
 ```
 But now it has to be like, with the **user()** or **admin()**:
 ```
-$response = Password::user()->sendResetLink($request->only('email'), function (Message $message) {
+Password::user()->sendResetLink($request->only('email'), function (Message $message) {
     $message->subject($this->getEmailSubject());
 });
 ```
