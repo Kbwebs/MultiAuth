@@ -86,6 +86,14 @@ But now it has to be like, with the **user()** or **admin()**:
 ```
 Auth::user()->attempt(['email' => $email, 'password' => $password], $remember)
 ```
+If you want to access the information for the authenticated user, you can do this:
+```
+Auth::user()->get();
+```
+OR
+```
+Auth::user()->get()->email
+```
 #### Password resets:
 It works just like the original laravel authentication library, 
 the only change is the **user()** or **admin()** it will match the auth type, as your defining in the multi-auth array:
