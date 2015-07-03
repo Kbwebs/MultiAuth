@@ -18,6 +18,10 @@ class AuthServiceProvider extends ServiceProvider
 			$app['auth.loaded'] = true;
 			return new MultiManager($app);
 		});
+		
+		$this->app->singleton('auth.driver', function ($app) {
+			return $app['auth']->driver();
+        	});
 	}
 
 	/**
