@@ -4,7 +4,7 @@
 First, pull in the package through Composer.
 ```PHP
 "require": {
-    "kbwebs/multiauth": "dev-master"
+    "kbwebs/multiauth": "~1.0"
 }
 ```
 Now you'll want to update or install via composer.
