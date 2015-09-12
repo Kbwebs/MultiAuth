@@ -1,6 +1,7 @@
 <?php
 
 namespace Kbwebs\MultiAuth\PasswordResets;
+
 use Closure;
 use UnexpectedValueException;
 use Illuminate\Contracts\Auth\UserProvider;

@@ -1,6 +1,7 @@
 <?php
 
 namespace Kbwebs\MultiAuth\PasswordResets;
+
 use Illuminate\Contracts\Mail\Mailer as MailerContract;
 
 class PasswordBrokerManager

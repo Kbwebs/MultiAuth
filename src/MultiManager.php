@@ -1,6 +1,7 @@
 <?php
 
 namespace Kbwebs\MultiAuth;
+
 use Illuminate\Foundation\Application;
 
 class MultiManager

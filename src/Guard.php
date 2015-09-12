@@ -1,6 +1,7 @@
 <?php
 
 namespace Kbwebs\MultiAuth;
+
 use Illuminate\Auth\Guard as OriginalGuard;
 use Illuminate\Contracts\Auth\UserProvider;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

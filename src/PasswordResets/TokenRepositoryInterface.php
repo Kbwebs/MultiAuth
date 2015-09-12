@@ -1,6 +1,7 @@
 <?php
 
 namespace Kbwebs\MultiAuth\PasswordResets;
+
 use Kbwebs\MultiAuth\PasswordResets\Contracts\CanResetPassword as CanResetPasswordContract;
 
 interface TokenRepositoryInterface

@@ -1,7 +1,7 @@
 {
     "name": "kbwebs/multiauth",
     "description": "MultiAuth for Laravel 5.1",
-    "keywords": ["auth", "laravel", "multiauth", "multi"],
+    "keywords": ["auth", "laravel", "multiauth", "multi", "user", "login", "signin"],
     "license": "MIT",
     "authors": [
         {

@@ -72,12 +72,12 @@ Likewise, if you want to clear all password resets, you have to run the followin
 php artisan kbwebs:multi-auth:clear-resets
 ```
 
-**NOTE** It is very important that you replace the default service providers. 
+**NOTE** It is very important that you replace the default service providers.
 If you do not wish to use Password resets, then remove the original Password resets server provider as it will cause errors.
 
 ## Usage
 #### Authentication:
-It works just like the original laravel authentication library, 
+It works just like the original laravel authentication library,
 the only change is the **user()** or **admin()** it will match the auth type, as your defining in the multi-auth array:
 ```
 Auth::attempt(['email' => $email, 'password' => $password], $remember)
@@ -86,8 +86,16 @@ But now it has to be like, with the **user()** or **admin()**:
 ```
 Auth::user()->attempt(['email' => $email, 'password' => $password], $remember)
 ```
+If you want to access the information for the authenticated user, you can do this:
+```
+Auth::user()->get();
+```
+OR
+```
+Auth::user()->get()->email
+```
 #### Password resets:
-It works just like the original laravel authentication library, 
+It works just like the original laravel authentication library,
 the only change is the **user()** or **admin()** it will match the auth type, as your defining in the multi-auth array:
 ```
 Password::sendResetLink($request->only('email'), function (Message $message) {
@@ -112,3 +120,5 @@ Which will match the following route:
 ```
 Route::get('password/reset/{type}/{token}', 'Controller@method');
 ```
+#### Tip:
+Remember to update all places where ex: Auth:: is been using, to ex: Auth::user() or what you have defined in config/auth.php

@@ -1,6 +1,7 @@
 <?php
 
 namespace Kbwebs\MultiAuth\PasswordResets;
+
 use Carbon\Carbon;
 use Illuminate\Database\ConnectionInterface;
 use Kbwebs\MultiAuth\PasswordResets\Contracts\CanResetPassword as CanResetPasswordContract;

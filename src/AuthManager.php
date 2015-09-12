@@ -1,6 +1,7 @@
 <?php
 
 namespace Kbwebs\MultiAuth;
+
 use Illuminate\Auth\AuthManager as OriginalAuthManager;
 use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Auth\DatabaseUserProvider;

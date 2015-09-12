@@ -1,6 +1,7 @@
 <?php
 
 namespace Kbwebs\MultiAuth\PasswordResets;
+
 use Illuminate\Support\ServiceProvider;
 use Kbwebs\MultiAuth\PasswordResets\DatabaseTokenRepository as DbRepository;
 use Kbwebs\MultiAuth\Console\PasswordResetsTableCommand;

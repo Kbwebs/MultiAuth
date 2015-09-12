@@ -1,15 +1,16 @@
 <?php
 
 namespace Kbwebs\MultiAuth;
-use Illuminate\Support\ServiceProvider;
 
-class AuthServiceProvider extends ServiceProvider
+use Illuminate\Auth\AuthServiceProvider as OriginalAuthServiceProvider;
+
+class AuthServiceProvider extends OriginalAuthServiceProvider
 {
 	/**
-     * Register bindings in the container.
-     * @return void
-     */
-	public function register()
+	* Register bindings in the container.
+	* @return void
+	*/
+	protected function registerAuthenticator()
 	{
 		$this->app->singleton('auth', function ($app) {
 			// Once the authentication service has actually been requested by the developer
@@ -18,14 +19,17 @@ class AuthServiceProvider extends ServiceProvider
 			$app['auth.loaded'] = true;
 			return new MultiManager($app);
 		});
+		$this->app->singleton('auth.driver', function ($app) {
+			return $app['auth']->driver();
+		});
 	}
 
 	/**
-     * Get the services provided by the provider.
-     * @return array
-     */
-    public function provides()
-    {
-        return ['auth'];
-    }
+	* Get the services provided by the provider.
+	* @return array
+	*/
+	public function provides()
+	{
+		return ['auth'];
+	}
 }
