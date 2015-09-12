@@ -25,11 +25,11 @@ class AuthServiceProvider extends OriginalAuthServiceProvider
 	}
 
 	/**
-	* Get the services provided by the provider.
-	* @return array
-	*/
-	public function provides()
-	{
-		return ['auth'];
-	}
+     * Get the services provided by the provider.
+     * @return array
+     */
+    public function provides()
+    {
+        return ['auth'];
+    }
 }
