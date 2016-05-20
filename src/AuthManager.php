@@ -39,10 +39,12 @@ class AuthManager extends OriginalAuthManager
      */
     protected function callCustomCreator($driver)
     {
-        $custom = parent::callCustomCreator($driver);
+        $custom = parent::callCustomCreator($driver)->getProvider();
+
         if($custom instanceof Guard) {
             return $custom;
         }
+
         return new Guard($custom, $this->app['session.store'], $this->name);
     }
 
